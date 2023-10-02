@@ -1,0 +1,21 @@
+# Build and output files
+bin/
+obj/
+
+# Temporary files
+.vscode/'
+.vs/
+
+# NuGet dependencies and packages
+packages/
+*.nupkg
+
+# Visual Studio configuration files
+*.sln
+*.vscode
+
+# Visual Studio Code cache
+.vscode-test/
+
+# Visual Studio Code backup files
+*~
