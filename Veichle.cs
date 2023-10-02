@@ -5,19 +5,21 @@ using System.Threading.Tasks;
 
 namespace ParkingLot
 {
-    public class Veichle
+    public class Vehicle
+
     {
-        public string? VeichleModel { get; set; }
+        public string? VehicleModel { get; set; }
         public string? NumberPlate { get; set; }
-        public int VeichleYear { get; set; }
+        public int VehicleYear { get; set; }
         public DateTime EntryTime { get; set; } = DateTime.Now;
         public bool IsCar { get; set; }
 
-        public Veichle(string veichleModel, string numberPlate, int veichleYear, bool isCar)
+        public Vehicle
+        (string vehicleModel, string numberPlate, int vehicleYear, bool isCar)
         {
-            VeichleModel = veichleModel;
+         VehicleModel = vehicleModel;
             NumberPlate = numberPlate;
-            VeichleYear = veichleYear;
+            VehicleYear = vehicleYear;
             IsCar = isCar;
         }
     }
