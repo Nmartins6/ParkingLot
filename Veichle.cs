@@ -9,18 +9,17 @@ namespace ParkingLot
 
     {
         public string? VehicleModel { get; set; }
+        public string? VehicleColor { get; set; }
         public string? NumberPlate { get; set; }
         public int VehicleYear { get; set; }
         public DateTime EntryTime { get; set; } = DateTime.Now;
-        public bool IsCar { get; set; }
 
         public Vehicle
-        (string vehicleModel, string numberPlate, int vehicleYear, bool isCar)
+        (string vehicleModel, string VehicleColor, string numberPlate, int vehicleYear)
         {
-         VehicleModel = vehicleModel;
+            VehicleModel = vehicleModel;
             NumberPlate = numberPlate;
             VehicleYear = vehicleYear;
-            IsCar = isCar;
         }
     }
 }

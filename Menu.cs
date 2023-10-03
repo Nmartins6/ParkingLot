@@ -20,14 +20,15 @@ namespace ParkingLot
         {
             while (true)
             {
-                Console.WriteLine("===MENU===");
-                Console.WriteLine("1. Entrada de veículo.");
-                Console.WriteLine("2. Saída de veículo.");
-                Console.WriteLine("3. Capacidade do estacionamento.");
-                Console.WriteLine("4. Lista vaículos.");
-                Console.WriteLine("5. Busca veículo.");
-                Console.WriteLine("6. Sair");
-
+                Console.Clear();
+                Console.WriteLine("============== MENU ==============");
+                Console.WriteLine("|1. Entrada de veículo.          |");
+                Console.WriteLine("|2. Saída de veículo.            |");
+                Console.WriteLine("|3. Capacidade do estacionamento.|");
+                Console.WriteLine("|4. Lista veículos.              |");
+                Console.WriteLine("|5. Busca veículo.               |");
+                Console.WriteLine("|6. Sair.                        |");
+                Console.WriteLine("==================================");
                 string? strChoice = Console.ReadLine();
 
                 if (int.TryParse(strChoice, out int choice))
@@ -35,23 +36,11 @@ namespace ParkingLot
                     switch (choice)
                     {
                         case 1:
-                            Console.WriteLine("Informe os dados do veículo:");
-                            Console.WriteLine("Modelo: ");
-                            string vehicleModel = Console.ReadLine() ?? "Modelo nao informado";
-                            Console.WriteLine("Placa: ");
-                            string numberPlate = Console.ReadLine() ?? "Placa nao informada";
-                            Console.WriteLine("Ano: ");
-                            int vehicleYear = Console.Read();
-                            Console.WriteLine("Carro ou moto: ");
-                            string isCarStr = Console.ReadLine() ?? "Carro";
-                            bool isCar = parkingLot.IsCarVerify(isCarStr);
-                            parkingLot.EnterVehicle(vehicleModel, numberPlate, vehicleYear, isCar);
+                            parkingLot.EnterVehicle();
                             break;
 
                         case 2:
-                            Console.WriteLine("Informe o veículo que está saíndo");
-                            string exitNumberPlate = Console.ReadLine() ?? "";
-                            parkingLot.ExitVehicle(exitNumberPlate);
+                            parkingLot.ExitVehicle();
                             break;
 
                         case 3:
@@ -60,7 +49,11 @@ namespace ParkingLot
 
                         case 4:
                             parkingLot.ShowParkedVehicles();
-                        break;
+                            break;
+
+                        case 5:
+                            parkingLot.FindVehicle();
+                            break;
 
                         case 6:
                             Environment.Exit(0);
@@ -73,7 +66,9 @@ namespace ParkingLot
                 }
                 else
                 {
-                    Console.WriteLine("Nao rolou");
+                    Console.WriteLine("Erro na opção informada, Tente novamente.");
+                    Console.WriteLine("**Aperte ENTER para retornar ao menu principal");
+                    Console.Read();
                 }
             }
         }
